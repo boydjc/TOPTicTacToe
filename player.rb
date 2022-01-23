@@ -1,6 +1,5 @@
 class Player
-  def initialize()
-  end
+  def initialize();end
 
   public
   def makeChoice()

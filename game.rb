@@ -12,12 +12,18 @@ class Game
 
   public
   def startGame()
+    @board.configureBoard()
     @player.chooseSymbol()
 	@computer.chooseSymbol(@player.getSymbol())
 	puts "Player symbol is: #{@player.getSymbol()}"
 	puts "Computer symbol is: #{@computer.getSymbol()}"
-	@board.displayBoard()
-    @board.checkForWinner()
+
+	while @winner == nil
+	  @board.displayBoard()
+	  playerChoice = @player.makeChoice()
+	  @board.placeChoice(playerChoice, @player.getSymbol())
+      @winner = @board.checkForWinner()
+	end
   end
 end
 
