@@ -17,7 +17,3 @@ class Board
 	end
   end
 end
-
-board = Board.new()
-
-board.displayBoard()
