@@ -19,14 +19,13 @@ class Board
 
   def checkForWinner()
     winner = nil
-	winner = checkDiagonals()
-    #if checkRows() != nil
-	#  winner = checkRows()
-	#elsif checkColumns() != nil
-	#  winner = checkColumns()
-	#elsif checkDiagonals() != nil
-	#  winner = checkDiagonals()
-	#end
+    if checkRows() != nil
+	  winner = checkRows()
+	elsif checkColumns() != nil
+	  winner = checkColumns()
+	elsif checkDiagonals() != nil
+	  winner = checkDiagonals()
+	end
 	return winner
   end
 
