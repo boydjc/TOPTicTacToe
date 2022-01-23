@@ -4,15 +4,18 @@ class Board
   end
 
   public 
-  def displayBoard()
+  def configureBoard()
     slot_counter = 1
     @board.each_with_index do |row, rIndex|
 	  row.each_with_index do |slot, sIndex|
-	    if slot == nil
-		  @board[rIndex][sIndex] = slot_counter
-		  slot_counter += 1
-		end
+		@board[rIndex][sIndex] = slot_counter
+		slot_counter += 1
 	  end
+	end
+  end
+
+  def displayBoard()
+    @board.each do |row|
 	  p row
 	end
   end
@@ -27,6 +30,16 @@ class Board
 	  winner = checkDiagonals()
 	end
 	return winner
+  end
+
+  def placeChoice(slotNum, symbol)
+      @board.each_with_index do |row, rIndex|
+	    row.each_with_index do |slot, sIndex|
+		  if row[sIndex] == slotNum.to_i
+		    @board[rIndex][sIndex] = symbol
+		  end
+	    end
+	  end
   end
 
   private 
