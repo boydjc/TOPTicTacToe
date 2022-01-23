@@ -17,6 +17,7 @@ class Game
 	puts "Player symbol is: #{@player.getSymbol()}"
 	puts "Computer symbol is: #{@computer.getSymbol()}"
 	@board.displayBoard()
+    p @board.checkForWinner()
   end
 end
 
