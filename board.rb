@@ -14,6 +14,10 @@ class Board
 	end
   end
 
+  def getBoard()
+    return @board
+  end
+
   def displayBoard()
     @board.each do |row|
 	  p row
