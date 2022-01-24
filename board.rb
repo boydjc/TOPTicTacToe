@@ -20,7 +20,7 @@ class Board
 
   def displayBoard()
     @board.each do |row|
-	  p row
+	  puts "| #{row[0]} | #{row[1]} | #{row[2]} | "
 	end
   end
 
