@@ -32,6 +32,8 @@ class Board
 	  winner = checkColumns()
 	elsif checkDiagonals() != nil
 	  winner = checkDiagonals()
+	elsif checkBoardFull() == true
+	  winner = 'f'
 	end
 	return winner
   end
@@ -88,5 +90,17 @@ class Board
 	  end
 	end
 	return nil
+  end
+
+  def checkBoardFull()
+    board_full = true
+    @board.each do |row|
+	  row.each do |slot|
+	    if slot.is_a? Integer
+		  board_full = false
+		end
+      end
+	end
+	return board_full
   end
 end
