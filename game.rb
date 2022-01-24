@@ -22,6 +22,12 @@ class Game
 	  @board.displayBoard()
 	  playerChoice = @player.makeChoice()
 	  @board.placeChoice(playerChoice, @player.getSymbol())
+	  @winner = @board.checkForWinner()
+	  if @winner != nil
+	    break
+	  end
+	  compChoice = @computer.makeChoice(@board.getBoard())
+	  @board.placeChoice(compChoice, @computer.getSymbol())
       @winner = @board.checkForWinner()
 	end
   end
