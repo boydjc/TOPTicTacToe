@@ -30,6 +30,17 @@ class Game
 	  @board.placeChoice(compChoice, @computer.getSymbol())
       @winner = @board.checkForWinner()
 	end
+	
+	@board.displayBoard()
+	if (@winner == 'x' && @player.getSymbol() == 'x') ||
+       (@winner == 'o' && @player.getSymbol() == 'o')
+	  puts "Player wins!"
+	elsif (@winner == 'x' && @computer.getSymbol() == 'x') ||
+	      (@winner == 'o' && @computer.getSymbol() == 'o')
+      puts "Computer Wins!"
+	elsif @winner == 'f' # board is full 
+	  puts "It is a draw!"
+    end
   end
 end
 
